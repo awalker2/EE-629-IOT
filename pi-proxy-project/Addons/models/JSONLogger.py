@@ -9,6 +9,6 @@ class JSONLogger:
                 host = flow.request.pretty_host
                 httpVer = flow.request.http_version
 
-                self.log.info("Host: " + host)
+                self.log.info("Host: " + host.txt)
                 self.log.info("HTTP Ver: " + httpVer)
                 
