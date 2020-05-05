@@ -1,14 +1,13 @@
-import mitmproxy.http
-from mitmproxy import ctx
+from mitmproxy import ctx, http
 
 class JSONLogger:
         def __init__(self):
             self.log = ctx.log
 
-        def request(self, flow: mitmproxy.http.HTTPFlow):
+        def request(self, flow: http.HTTPFlow) -> None:
                 host = flow.request.pretty_host
                 httpVer = flow.request.http_version
 
-                self.log.info("Host: " + host.txt)
-                self.log.info("HTTP Ver: " + httpVer)
+                print(host)
+                print(httpVer)
                 
