@@ -1,7 +1,5 @@
-import mitmproxy.http
-
-from .AdBlocker import AdBlocker
-from .JSONLogger import JSONLogger
+from models.JSONLogger import JSONLogger
+from models.AdBlocker import AdBlocker
 
 addons = [
     JSONLogger()
