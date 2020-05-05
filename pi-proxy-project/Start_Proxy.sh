@@ -7,4 +7,5 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8
 ip6tables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
 ip6tables -t nat -A PREROUTING -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8080
 
-mitmweb --web-port 9090 --web-host 0.0.0.0
+mitmweb --web-port 9090 --web-host 0.0.0.0 -s ./Addons/Load_Addons.py
+
