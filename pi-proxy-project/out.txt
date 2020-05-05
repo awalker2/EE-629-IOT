@@ -1,0 +1,3 @@
+Web server listening at http://127.0.0.1:8081/
+Loading script Addons/Load_Addons.py
+Proxy server listening at http://*:8080
