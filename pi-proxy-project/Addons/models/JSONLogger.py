@@ -8,11 +8,12 @@ class JSONLogger:
 
         # Only concenred with logging HTTP responses for now
         def response(self, flow: http.HTTPFlow) -> None:
-                host = flow.response.pretty_host
-                httpVer = flow.response.http_version
-                size = len(flow.response.content)
+                host = str(flow.response.pretty_host)
+                httpVer = str(flow.response.http_version)
+                size = str(len(flow.response.content))
+                time = str(flow.response.timestamp_start)
 
                 # Insert the info about the host into the database
                 self.db.insert(
-                    {'host': str(host), 'httpVer': str(httpVer), 'size': str(size)}
+                    {'host': host, 'httpVer': httpVer, 'size': size, 'time': time}
                 )
