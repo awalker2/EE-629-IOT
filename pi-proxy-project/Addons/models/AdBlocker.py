@@ -3,6 +3,7 @@ from mitmproxy import ctx
 
 class AdBlocker:   
         def __init__(self):
+               # Will block hostnames with these exact matches
                self.blockedHostnames = [
                 "pagead2.googlesyndication.com",
                 "securepubads.g.doubleclick.net",
@@ -10,7 +11,7 @@ class AdBlocker:
                 "ad.doubleclick.net",
                 "ade.googlesyndication.com"
                ]
-
+                # Will block paths that contain this
                self.blockedPaths = [
                 "/pagead/"
                ]
@@ -29,6 +30,7 @@ class AdBlocker:
                         if blockedPath in path:
                                 blocked = True
 
+                # Drop if blocked
                 if (blocked):
                         flow.kill()
                         ctx.log.info("Blocked request to: " + host)
