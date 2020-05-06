@@ -3,7 +3,11 @@ from mitmproxy import ctx
 
 class AdBlocker:   
         def __init__(self):
-               self.blockedHostnames = ["pagead2.googlesyndication.com"]
+               self.blockedHostnames = [
+                "pagead2.googlesyndication.com",
+               "securepubads.g.doubleclick.net"
+               ]
+
 
         def request(self, flow: mitmproxy.http.HTTPFlow):
                 host = flow.request.host
