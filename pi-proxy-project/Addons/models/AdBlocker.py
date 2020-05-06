@@ -6,7 +6,9 @@ class AdBlocker:
                self.blockedHostnames = [
                 "pagead2.googlesyndication.com",
                 "securepubads.g.doubleclick.net",
-                "www.googleadservices.com"
+                "www.googleadservices.com",
+                "ad.doubleclick.net",
+                "ade.googlesyndication.com"
                ]
 
                self.blockedPaths = [
