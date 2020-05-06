@@ -7,7 +7,8 @@ class AdBlocker:
 
         def request(self, flow: mitmproxy.http.HTTPFlow):
                 host = flow.request.host
+                ctx.log.info("Checking: " + host)
                 if host in self.blockedHostnames:
-                        print("Blocked request to: " + host)
+                        ctx.log.info("Blocked request to: " + host)
                         flow.kill()
 
