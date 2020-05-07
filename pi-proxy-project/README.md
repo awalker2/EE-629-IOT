@@ -11,7 +11,6 @@ Running:<br />
 &ensp;2-cd /node_server<br />
 &ensp;3-npm install<br />
 &ensp;4-npm start<br />
-&ensp;5-cd ..<br />
 &ensp;6-New terminal - sudo ./start_proxy.sh<br />
 
 Devices can connect by setting their proxy to [Pi IP]:8080 and downloading a certificate from mitm.it
