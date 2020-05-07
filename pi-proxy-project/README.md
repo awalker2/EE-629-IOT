@@ -1,17 +1,17 @@
-Goal:
+Goal:<br />
 The goal for this project is to run mitmproxy with a few custom Python extensions - one to block ads, and another one to log traffic to JSON. Once a few sites have been visited, a Node server will graph some statistics about the browser traffic run through the proxy. The proxy runs on port 8080, the proxy web interface runs on 9090, and the Node graphs run on 9091.
 
 Dependencies:<br />
-Python 3.7 - mitmproxy, TinyDB<br />
-NodeJS 12 - Chart.JS, express<br />
-Raspberry Pi 3B+ - ./start_proxy assumes eth0 is desired<br />
+&ensp;Python 3.7 - mitmproxy, TinyDB<br />
+&ensp;NodeJS 12 - Chart.JS, express<br />
+&ensp;Raspberry Pi 3B+ - ./start_proxy assumes eth0 is desired<br />
 
 Running:<br />
-    1-Install the dependencies<br />
-    2-cd /node_server<br />
-    3-npm install<br />
-    4-cd ..<br />
-    5-sudo ./start_proxy.sh<br />
+&ensp;1-Install the dependencies<br />
+&ensp;2-cd /node_server<br />
+&ensp;3-npm install<br />
+&ensp;4-cd ..<br />
+&ensp;5-sudo ./start_proxy.sh<br />
 
 After that, only step 5 is needed, it will start everything. Devices can connect by setting their proxy to [Pi IP]:8080 and downloading a certificate from mitm.it
 
