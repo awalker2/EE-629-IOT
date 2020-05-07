@@ -3,7 +3,7 @@ The goal for this project is to run mitmproxy with a few custom Python extension
 
 Dependencies:<br />
 &ensp;Python 3.7 - mitmproxy, TinyDB<br />
-&ensp;NodeJS 12 - Chart.JS, express<br />
+&ensp;NodeJS 12 - Chart.JS, Express<br />
 &ensp;Raspberry Pi 3B+ - ./start_proxy assumes eth0 is desired<br />
 
 Running:<br />
@@ -18,7 +18,7 @@ Devices can connect by setting their proxy to [Pi IP]:8080 and downloading a cer
 Documentation:<br />
 &ensp;/node_server - Server to host the graphs based on the JSON, has routes to show graphs and also reset the DB<br />
 &ensp;/proxy/addons - Where the custom mitmproxy Python addons are loaded from<br />
-&ensp;&ensp;/proxy/addons/models/AdBlocker - Blocks ads by hostname or path string match, more URLS and paths seemed to partially work for YouTube<br />
+&ensp;&ensp;/proxy/addons/models/AdBlocker - Blocks ads by hostname or path string match, more URLs and paths seemed to partially work for YouTube<br />
 &ensp;&ensp;/proxy/addons/models/JSONLogger - Stores the web traffic with TinyDB in JSON<br />
 &ensp;/proxy/data - Where the web traffic is stored as a JSON by TinyDB and accessed by Node<br />
 &ensp;./start_proxy.sh - Sets all network settings needed for proxy (will be lost on reboot), starts the proxy with the custom addons, and starts the Node server<br />
