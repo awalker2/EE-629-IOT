@@ -4,7 +4,7 @@ from tinydb import TinyDB, Query
 class JSONLogger:
         def __init__(self):
             # Setup the database, will create new one if none exist
-            self.db = TinyDB('Data/db.json')
+            self.db = TinyDB('/proxy/data/db.json')
 
         # Only concerned with logging HTTP responses for now
         def response(self, flow: http.HTTPFlow) -> None:
