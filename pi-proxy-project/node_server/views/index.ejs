@@ -1,0 +1,111 @@
+<!DOCTYPE html>  
+<html>  
+<head>
+  <meta charset="utf-8">
+  <title>Graphs of HTML Proxy Traffic</title>
+</head>
+
+<body>
+    <h2>Graphs of HTML Proxy Traffic</h2>
+    <canvas id="chart1" width="100%" height="30%"></canvas>
+    <canvas id="chart2" width="100%" height="25%"></canvas>
+    <canvas id="chart3" width="100%" height="25%"></canvas>
+    
+    <form action="/delete">
+      <input type="submit" value="Delete Database" />
+    </form>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script>
+  backgroundColors = [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)'
+                ];
+  borderColors = [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)'
+              ];
+  
+  var ctx1 = document.getElementById('chart1').getContext('2d');
+  var myChart1 = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+          labels: <%- JSON.stringify(chartData.chart1.labels) %>,
+          datasets: [{
+              label: "Top 10 Hostnames by Visits",
+              data:  <%- JSON.stringify(chartData.chart1.data) %>,
+              backgroundColor: backgroundColors,
+              borderColor: borderColors,
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+
+  var ctx2 = document.getElementById('chart2').getContext('2d');
+  var myChart2 = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+          labels: <%- JSON.stringify(chartData.chart2.labels) %>,
+          datasets: [{
+              label: "Top 10 Hostnames by Traffic Sent",
+              data:  <%- JSON.stringify(chartData.chart2.data) %>,
+              backgroundColor: backgroundColors.reverse(),
+              borderColor: borderColors.reverse(),
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+
+  var ctx3 = document.getElementById('chart3').getContext('2d');
+  var myChart3 = new Chart(ctx3, {
+      type: 'pie',
+      data: {
+          labels: <%- JSON.stringify(chartData.chart3.labels) %>,
+          datasets: [{
+              label: "HTTP Versions Used",
+              data:  <%- JSON.stringify(chartData.chart3.data) %>,
+              backgroundColor: backgroundColors.reverse(),
+              borderColor: borderColors.reverse(),
+              borderWidth: 1
+          }]
+      }
+  });
+</script>
+
+</html>
