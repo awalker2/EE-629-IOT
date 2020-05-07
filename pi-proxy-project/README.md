@@ -16,10 +16,10 @@ Running:<br />
 After that, only step 5 is needed, it will start everything. Devices can connect by setting their proxy to [Pi IP]:8080 and downloading a certificate from mitm.it
 
 Documentation:<br />
-    /node_server - Server to host the graphs based on the JSON, has routes to show graphs and also reset the DB<br />
-    /proxy/addons - Where the custom mitmproxy Python addons are loaded from<br />
-        /proxy/addons/models/AdBlocker - Blocks ads by hostname or path string match, more URLS and paths seemed to partially work for YouTube<br />
-        /proxy/addons/models/JSONLogger - Stores the web traffic with TinyDB in JSON<br />
-    /proxy/data - Where the web traffic is stored as a JSON by TinyDB and accessed by Node<br />
-    ./start_proxy.sh - Sets all network settings needed for proxy (will be lost on reboot), starts the proxy with the custom addons, and starts the Node server<br />
+&ensp;/node_server - Server to host the graphs based on the JSON, has routes to show graphs and also reset the DB<br />
+&ensp;/proxy/addons - Where the custom mitmproxy Python addons are loaded from<br />
+&ensp;&ensp;/proxy/addons/models/AdBlocker - Blocks ads by hostname or path string match, more URLS and paths seemed to partially work for YouTube<br />
+&ensp;&ensp;/proxy/addons/models/JSONLogger - Stores the web traffic with TinyDB in JSON<br />
+&ensp;/proxy/data - Where the web traffic is stored as a JSON by TinyDB and accessed by Node<br />
+&ensp;./start_proxy.sh - Sets all network settings needed for proxy (will be lost on reboot), starts the proxy with the custom addons, and starts the Node server<br />
 
