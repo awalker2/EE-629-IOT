@@ -10,10 +10,11 @@ Running:<br />
 &ensp;1-Install the dependencies<br />
 &ensp;2-cd /node_server<br />
 &ensp;3-npm install<br />
-&ensp;4-cd ..<br />
-&ensp;5-sudo ./start_proxy.sh<br />
+&ensp;4-npm start<br />
+&ensp;5-cd ..<br />
+&ensp;6-New terminal - sudo ./start_proxy.sh<br />
 
-After that, only step 5 is needed, it will start everything. Devices can connect by setting their proxy to [Pi IP]:8080 and downloading a certificate from mitm.it
+Devices can connect by setting their proxy to [Pi IP]:8080 and downloading a certificate from mitm.it
 
 Documentation:<br />
 &ensp;/node_server - Server to host the graphs based on the JSON, has routes to show graphs and also reset the DB<br />
